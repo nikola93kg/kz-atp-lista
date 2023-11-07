@@ -1,0 +1,31 @@
+.results-container-weekly {
+    background-color: #f1c40f66;  
+  }
+  
+ .results-container-weekly .results-table {
+  color: #f1c40f;
+  }
+  
+.results-container-weekly .results-title {
+    color: #f1c40f;
+  }
+
+  .results-container-weekly tr:hover {
+    background-color: #f1c40f52;  
+}
+
+.results-container-weekly th {
+  background-color: #f1c40fe8;
+  color: #555;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.results-container-weekly tr:nth-child(even) {
+  background-color: #fafafa22;
+}
+
+.results-container-weekly .vote-count {
+  /* text-shadow: 1px 1px 0px #fff; */
+}
+  

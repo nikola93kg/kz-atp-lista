@@ -1,0 +1,34 @@
+.results-container-monthly {
+    background-color: #3366ff4a;
+  }
+  
+  .results-container-monthly .results-table {
+    color: #3366ff;  
+  }
+  
+  .results-container-monthly .results-title {
+    color: #0066ff;  
+  }
+  
+  .results-container-monthly .results-table {
+  color: #f1c40f;
+  }
+  
+  .results-container-monthly .results-title {
+    color: #f1c40f;
+  }
+
+    .results-container-monthly tr:hover {
+    background-color: #f1c40f52;  
+}
+
+  .results-container-monthly th {
+  background-color: #0066ffea;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+  .results-container-monthly tr:nth-child(even) {
+  background-color: #fafafa22;
+}
