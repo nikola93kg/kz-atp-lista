@@ -1,27 +1,29 @@
 .navbar-container {
     position: absolute;
     top: 10px;
-    right: 60px;
-    background-color: rgba(255, 255, 255, 0.2);
+    left: 0px;
     padding: 5px;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
-.navbar-container button {
+.navbar-container button,
+.navbar-container a {
     background-color: rgba(255, 255, 255, 0.2);
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 5px 10px;
-
-    /* Optional hover effect */
-    &:hover {
-        background-color: rgba(255, 255, 255, 1);
-    }
+    margin: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    color: inherit; /* Keeps the text color consistent */
+    transition: background-color 0.3s; /* Smooth background transition */
 }
 
+.navbar-container button:hover,
+.navbar-container a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
 
 .admin-dropdown {
     position: relative;
@@ -35,7 +37,7 @@
     min-width: 140px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    background-color: #fff;
+    transition: all 0.3s ease; /* Smooth transition for dropdown */
 }
 
 .admin-dropdown-content a {
@@ -43,6 +45,7 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    transition: background-color 0.3s;
 }
 
 .admin-dropdown-content a:hover {
@@ -54,14 +57,42 @@
 }
 
 .playPauseButton {
-    /* font-size: 18px; */
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: #f1c40f; 
+    color: #f1c40f;
     padding: 8px 12px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .playPauseButton:focus {
     outline: none;
 }
+
+/* Reveal menu items when hovering over the play button */
+.playPauseButton:hover + .menu-container,
+.menu-container:hover {
+    left: 100%; /* Slide in to the original position */
+}
+/* Hide menu items initially and position them off-screen to the left */
+.menu-container {
+    display: flex;
+    opacity: 0; /* Start as invisible */
+    visibility: hidden; /* Hide it */
+    position: absolute;
+    left: -100%; /* Start off-screen to the left */
+    top: 5px;
+    white-space: nowrap;
+    transition: left 0.5s ease, opacity 0.5s ease, visibility 0.5s ease; /* Smooth slide-in transition with fade-in */
+}
+
+/* Reveal menu items with a slide-in and fade-in effect when hovering over the play button */
+.playPauseButton:hover + .menu-container,
+.menu-container:hover {
+    left: 100%; /* Slide in to the right of the play button */
+    opacity: 1; /* Make it visible */
+    visibility: visible; /* Show it */
+}
+

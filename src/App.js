@@ -1,25 +1,29 @@
 import React, { useState, useEffect } from "react";
 import VotingForm from "./components/VotingForm";
-import VotingResults from "./components/VotingResults";
-import Toast from "./components/Toast";
+import VotingResults from "./components/results/VotingResults";
+import Toast from "./components/toast/Toast";
 import "./styles/App.css";
-import WeeklyResults from "./components/WeeklyResults";
-import MonthlyResults from "./components/MonthlyResults";
+import WeeklyResults from "./components/results/WeeklyResults";
+import MonthlyResults from "./components/results/MonthlyResults";
 import Navbar from './components/Navbar';
 import themeMusic from './assets/theme.mp3';
-import AddPerson from './components/AddPerson'
-import DeletePerson from './components/DeletePerson'
-import UpdatePerson from './components/UpdatePerson'
+import AddPerson from './components/crud/AddPerson'
+import DeletePerson from './components/crud/DeletePerson'
+import UpdatePerson from './components/crud/UpdatePerson'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {useToast } from './store/ToastContext';
+import ToastsContainer from './components/toast/ToastContainer';
 
 function App() {
+    
     const [results, setResults] = useState({});
-    const [toasts, setToasts] = useState([]);
     const [hasVoted, setHasVoted] = useState(false);
     const [viewStyle, setViewStyle] = useState({});
     const [resultsView, setResultsView] = useState('regular');
     const [audio, setAudio] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const { toasts, addToast } = useToast(); 
+    
 
     useEffect(() => {
         const fetchResults = async () => {
@@ -37,15 +41,6 @@ function App() {
     
         fetchResults();
     }, []);
-    
-
-    const addToast = (message, type = "error") => {
-        const id = Date.now();
-        setToasts(prev => [...prev, { id, message, type }]);
-        setTimeout(() => {
-            setToasts(prev => prev.filter(toast => toast.id !== id));
-        }, 3000);
-    };
 
     const handleVote = async (selectedPerson) => {
 
@@ -152,6 +147,7 @@ function App() {
                         </>
                     } />
                 </Routes>
+                <ToastsContainer />
             </div>
         </Router>
     );

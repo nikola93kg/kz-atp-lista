@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Toast.css';
+import '../../styles/Toast.css';
 
 function Toast({ message, type }) {
     return (

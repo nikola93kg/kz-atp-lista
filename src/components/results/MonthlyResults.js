@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/MonthlyResults.css';
+import '../../styles/MonthlyResults.css';
 
 function MonthlyResults({className }) {
     const [monthlyResults, setMonthlyResults] = useState({});

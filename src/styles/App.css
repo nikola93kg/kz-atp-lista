@@ -65,6 +65,7 @@
   justify-content: space-between;
   align-items: center;
   min-width: 430px;
+  margin-top: auto;
 }
 .results-buttons button {
   padding: 10px 30px;
@@ -83,10 +84,13 @@
 
 .results-wrapper {
   position: relative;
-  min-height: 350px;
   width: 60%; 
+  height: 550px;
   padding: 30px;
   margin: 30px auto;
+  overflow: auto; 
+  box-sizing: border-box; 
+  border-radius: 8px;
 }
 
 .results-container {
@@ -105,3 +109,25 @@
 }
 
 
+.results-wrapper::-webkit-scrollbar {
+  width: 10px;
+  background-color: #007bff4a; 
+}
+
+.results-wrapper::-webkit-scrollbar-thumb {
+  background-color: #007bff3f;
+  border-radius: 10px; 
+}
+
+.results-wrapper::-webkit-scrollbar-track {
+  background-color: #e1e1e11d; 
+}
+
+.results-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3;
+}
+
+.results-wrapper {
+  scrollbar-width: thin; 
+  scrollbar-color: #007bff #f5f5f5; 
+}

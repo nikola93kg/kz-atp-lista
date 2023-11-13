@@ -1,0 +1,64 @@
+.add-person-container {
+    max-width: 700px;
+    min-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff9;
+  }
+  
+  .add-person-container h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  .add-person-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-person-container label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .add-person-container input {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .add-person-container input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  
+  .add-person-container button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-person-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    margin: 1rem 0;
+    border-radius: 5px;
+    object-fit: scale-down;
+  }
+  

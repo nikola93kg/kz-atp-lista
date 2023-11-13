@@ -20,3 +20,33 @@
 .toast.error {
     background-color: #dc3545; /* red */
 }
+
+.toasts-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  .toast {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s;
+  }
+  
+  .toast.error {
+    background-color: #f44336; /* Adjust the color to match your design */
+  }
+  
+  .toast.success {
+    background-color: #4CAF50; /* Adjust the color to match your design */
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  

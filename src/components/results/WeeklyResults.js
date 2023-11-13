@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/VotingResults.css';
-import '../styles/WeeklyResults.css';
+import '../../styles/VotingResults.css';
+import '../../styles/WeeklyResults.css';
 
 function WeeklyResults({className }) {
     const [weeklyResults, setWeeklyResults] = useState({});

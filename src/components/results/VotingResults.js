@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/VotingResults.css';
+import '../../styles/VotingResults.css';
 
 function VotingResults({ results, className  }) {
     

@@ -6,18 +6,43 @@ function VotingForm({ onVote }) {
   const [persons, setPersons] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  // useEffect(() => {
+  //   fetch(`${process.env.REACT_APP_BACKEND_URL}/persons`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setPersons(data);
+  //       setIsLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching persons:", error);
+  //       setIsLoading(false);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/persons`)
-      .then((response) => response.json())
-      .then((data) => {
+    const fetchPersons = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/persons`);
+        if (!response.ok) {
+          throw new Error("Error fetching persons");
+        }
+        let data = await response.json();
+        data = sortPersons(data);
         setPersons(data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching persons:", error);
+      } finally {
         setIsLoading(false);
-      });
+      }
+    };
+  
+    fetchPersons();
   }, []);
+
+  const sortPersons = (persons) => {
+    return persons.slice().sort((a, b) => a.id - b.id);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

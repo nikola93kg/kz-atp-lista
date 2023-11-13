@@ -1,5 +1,6 @@
 .results-container-weekly {
     background-color: #f1c40f66;  
+    background-color: rgba(117, 98, 22, 0.627);  
   }
   
  .results-container-weekly .results-table {
@@ -26,6 +27,6 @@
 }
 
 .results-container-weekly .vote-count {
-  /* text-shadow: 1px 1px 0px #fff; */
+  color: #fff;
 }
   
